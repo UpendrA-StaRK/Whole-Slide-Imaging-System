@@ -176,6 +176,7 @@ def predict_focus_distance(model, image_path):
     
 def main():
     torch.backends.cudnn.benchmark = True
+    
     # Create model
     model = ResNetFocusRegressor()
 
