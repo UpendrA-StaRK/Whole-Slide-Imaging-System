@@ -111,25 +111,6 @@ Interoperable metadata and multi-resolution pyramids enable plug-and-play use wi
 
 ---
 
-## 📁 Data & Annotations (Guidance)
-
-* **Input:** Brightfield/fluorescence tile patches with known z-offsets for supervised training.
-* **Labels:** Continuous focus distances (µm/mm) or equivalent defocus proxies (e.g., objective steps).
-* **Augmentations:** Contrast, mild blur/jitter, intensity scaling; preserve focus ordering.
-* **QC:** Hold-out slide regions across staining conditions to avoid site-specific bias.
-
-> This repository does not include datasets. Use institution-approved, de-identified data only.
-
----
-
-## 🔐 Compliance & Ethics
-
-* Follow institutional guidelines for handling clinical images.
-* Remove PHI/PII and respect consent policies.
-* Validate across stains, scanners, magnifications, and tissue types before deployment.
-
----
-
 ## 🔧 Extensibility
 
 * Swap backbones (e.g., EfficientNet, ConvNeXt) for the regressor.
@@ -144,14 +125,6 @@ Interoperable metadata and multi-resolution pyramids enable plug-and-play use wi
 * **OME-TIFF / OME-Zarr** (Open Microscopy Environment) standards
 * **Dask/Zarr** for chunked, out-of-core arrays
 * **ResNet** family for CNN regression backbones
-
----
-
-## 📝 License & IP
-
-* Code in this repository is released under **\[choose a license]**.
-* Portions of the capture/stitching strategy are **patent-protected**; redistribution and commercial use may require a separate agreement.
-* Trademarks are the property of their respective owners.
 
 ---
 
