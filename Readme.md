@@ -1,6 +1,6 @@
 # Whole-Slide Imaging System (WSI) — Deep-Learning Autofocus & Pyramidal OME-TIFF
 
-> Python · TensorFlow/PyTorch · OpenCV · NVIDIA Jetson · Dask/Zarr · OME-TIFF
+> Python · TensorFlow/PyTorch · OpenCV · Dask/Zarr · OME-TIFF
 
 Core components of a Whole-Slide Imaging pipeline for high-throughput digital pathology. The code covers a deep-learning autofocus regressor for inline focus estimation, a stitched WSI assembly flow, and a memory/I/O-optimized exporter that produces pyramidal OME-TIFF for common viewers and downstream analysis.
 
