@@ -1,6 +1,6 @@
 # Whole-Slide Imaging System (WSI) — Deep-Learning Autofocus & Pyramidal OME-TIFF
 
-> Python · TensorFlow/PyTorch · OpenCV · Dask/Zarr · OME-TIFF
+> Python · TensorFlow/PyTorch · OpenCV · OME-TIFF
 
 Core components of a Whole-Slide Imaging pipeline for high-throughput digital pathology. The code covers a deep-learning autofocus regressor for inline focus estimation, a stitched WSI assembly flow, and a memory/I/O-optimized exporter that produces pyramidal OME-TIFF for common viewers and downstream analysis.
 
@@ -13,8 +13,6 @@ Core components of a Whole-Slide Imaging pipeline for high-throughput digital pa
 * **Edge-Optimized Export:** Pyramidal OME-TIFF generation with Dask/Zarr to reduce processing time and peak RAM footprint on **NVIDIA Jetson-class** devices.
 * **Modular, Inline Processing:** Built for inline scanning: estimate focus → select sharp tiles → assemble → pyramidal export.
 * **Rechunking for I/O Efficiency:** Chunk geometry tuned per level for fast random access in downstream viewers.
-
-> **IP notice:** Portions of the capture/stitching logic are patent-protected. See **License & IP**.
 
 ---
 
@@ -44,8 +42,6 @@ Whole-Slide-Imaging-System-main/
 * **`ProcessCollection` (`packages1.py`)**
   Multiprocessing-friendly collector for tile batches, with raster/level registration and OME-TIFF emission (`save_processed_images`). Includes `zarr_process(queue, zarr_path, ome_tiff_path)` for worker execution.
 
-> Names and signatures reflect the code in this archive; auxiliary pieces (device control, stitching heuristics, etc.) exist in the private repository.
-
 ---
 
 ## 🔬 Autofocus Model (Inline)
@@ -64,11 +60,9 @@ Continuous offsets preserve ordering information and enable sub-step correction�
 
 ---
 
-## 🧵 Stitching & Capture Strategy (Patented)
+## 🧵 Stitching & Capture Strategy 
 
 The capture algorithm plans a path over the specimen with overlap tuned to field curvature and depth of field. Inline focus scores trigger selection or re-capture of tiles that miss the sharpness threshold. Neighbor-aware blending is applied during assembly to avoid visible seams.
-
-> The archive includes only the interfaces required by the exporter and accumulator for IP-protected components.
 
 ---
 
